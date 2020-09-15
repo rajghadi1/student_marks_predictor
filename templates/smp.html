@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Student Marks Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<style>
+        .predict{
+            background-color: rgb(8, 8, 8);
+            padding-top: 100px;
+            width:cover;
+            height: 300px;
+            color: white;
+        }
+        form{
+            width:1000px;
+            padding-left: 500px;
+            padding-right: 0px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+</style>
+
+</head>
+<body>
+    <div class="">
+
+        <div class="jumbotron" style="cover">
+            <center><h1 class="display-4">Student Marks Predictor</h1></center>
+            <hr class="my-4">
+        </div>
+
+       
+    <form action="{{url_for('predict')}}" method="post">
+        <div class="form-group">
+          <label for="input hours">Enter how much hours you study per day</label>
+          <input type="number" class="form-control" id="input hours", name="study_hours">
+          <small id="extra" class="form-text text-muted">just submit your study hours and i will predict your exam marks</small>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+    </div>
+    <div class="predict">
+        <center>{{predict_text}}</center>
+    </div>
+</body>
+</html>
